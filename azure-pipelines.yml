@@ -21,6 +21,6 @@ steps:
     location: 'South India'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/HarisAbdulkareem/LogicAppConsumption/main/template.json'
-    overrideParameters: '-projectName la-con-proj'
+    overrideParameters: '-projectName '''
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
