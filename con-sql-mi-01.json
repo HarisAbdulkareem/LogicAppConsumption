@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "kind": "V1",
     "properties": {
-        "displayName": "con-azsql-mi-01",
+        "displayName": "con-azsql-mi-01-devops",
         "authenticatedUser": {},
         "overallStatus": "Ready",
         "statuses": [
@@ -55,7 +55,7 @@
         ]
     },
     "id": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-logicapps-work/providers/Microsoft.Web/connections/sql-30",
-    "name": "sql-30",
+    "name": "sql-35",
     "type": "Microsoft.Web/connections",
     "location": "southindia"
 }
