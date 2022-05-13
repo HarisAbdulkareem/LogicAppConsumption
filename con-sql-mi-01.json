@@ -1,0 +1,59 @@
+{
+    "kind": "V1",
+    "properties": {
+        "displayName": "con-azsql-mi-01",
+        "authenticatedUser": {},
+        "overallStatus": "Ready",
+        "statuses": [
+            {
+                "status": "Ready"
+            }
+        ],
+        "parameterValueSet": {
+            "name": "oauthMI",
+            "values": {}
+        },
+        "customParameterValues": {},
+        "createdTime": "2022-05-10T04:40:42.0228954Z",
+        "changedTime": "2022-05-10T04:40:42.1010154Z",
+        "api": {
+            "name": "sql",
+            "displayName": "SQL Server",
+            "description": "Microsoft SQL Server is a relational database management system developed by Microsoft. Connect to SQL Server to manage data. You can perform various actions such as create, update, get, and delete on rows in a table.",
+            "iconUri": "https://connectoricons-prod.azureedge.net/non_zr_connectors/1.0.1575.2789/sql/icon.png",
+            "brandColor": "#ba141a",
+            "category": "Standard",
+            "id": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/providers/Microsoft.Web/locations/southindia/managedApis/sql",
+            "type": "Microsoft.Web/locations/managedApis"
+        },
+        "testLinks": [
+            {
+                "requestUri": "https://edge.management.azure.com:443/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-logicapps-work/providers/Microsoft.Web/connections/sql-30/extensions/proxy/testconnection?api-version=2018-07-01-preview",
+                "method": "get"
+            }
+        ],
+        "testRequests": [
+            {
+                "body": {
+                    "request": {
+                        "method": "get",
+                        "path": "testconnection"
+                    }
+                },
+                "inputParameters": [
+                    {
+                        "path": "body.properties.workflowReference.id",
+                        "type": "string",
+                        "description": "The workflow reference resource id."
+                    }
+                ],
+                "requestUri": "https://edge.management.azure.com:443/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-logicapps-work/providers/Microsoft.Web/connections/sql-30/dynamicInvoke?api-version=2018-07-01-preview",
+                "method": "POST"
+            }
+        ]
+    },
+    "id": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-logicapps-work/providers/Microsoft.Web/connections/sql-30",
+    "name": "sql-30",
+    "type": "Microsoft.Web/connections",
+    "location": "southindia"
+}
