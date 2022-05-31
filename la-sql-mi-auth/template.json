@@ -1,0 +1,46 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_sql_30_name": {
+            "defaultValue": "sql-30",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('connections_sql_30_name')]",
+            "location": "southindia",
+            "kind": "V1",
+            "properties": {
+                "displayName": "con-azsql-mi-01",
+                "statuses": [
+                    {
+                        "status": "Ready"
+                    }
+                ],
+                "customParameterValues": {},
+                "createdTime": "2022-05-10T04:40:42.0228954Z",
+                "changedTime": "2022-05-10T04:40:42.1010154Z",
+                "api": {
+                    "name": "sql",
+                    "displayName": "SQL Server",
+                    "description": "Microsoft SQL Server is a relational database management system developed by Microsoft. Connect to SQL Server to manage data. You can perform various actions such as create, update, get, and delete on rows in a table.",
+                    "iconUri": "https://connectoricons-prod.azureedge.net/non_zr_connectors/1.0.1575.2789/sql/icon.png",
+                    "brandColor": "#ba141a",
+                    "id": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/providers/Microsoft.Web/locations/southindia/managedApis/sql",
+                    "type": "Microsoft.Web/locations/managedApis"
+                },
+                "testLinks": [
+                    {
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-logicapps-work/providers/Microsoft.Web/connections/', parameters('connections_sql_30_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "method": "get"
+                    }
+                ]
+            }
+        }
+    ]
+}
