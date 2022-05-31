@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "connections_sql_31_name": {
-            "value": null
+            "value": sql-31-mi-auth
         }
     }
 }
