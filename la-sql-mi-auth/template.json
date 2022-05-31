@@ -2,8 +2,8 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "connections_sql_30_name": {
-            "defaultValue": "sql-30",
+        "connections_sql_31_name": {
+            "defaultValue": "sql-31",
             "type": "String"
         }
     },
@@ -12,7 +12,7 @@
         {
             "type": "Microsoft.Web/connections",
             "apiVersion": "2016-06-01",
-            "name": "[parameters('connections_sql_30_name')]",
+            "name": "[parameters('connections_sql_31_name')]",
             "location": "southindia",
             "kind": "V1",
             "properties": {
@@ -36,7 +36,7 @@
                 },
                 "testLinks": [
                     {
-                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-logicapps-work/providers/Microsoft.Web/connections/', parameters('connections_sql_30_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-logicapps-work/providers/Microsoft.Web/connections/', parameters('connections_sql_31_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
                         "method": "get"
                     }
                 ]
