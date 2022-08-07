@@ -1,43 +1,99 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "workflows_la_excel_devops_parameter_name": {
+            "defaultValue": "la-excel-devops-parameter",
+            "type": "String"
+        },
+        "connections_excelonlinebusiness_externalid": {
+            "defaultValue": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-devops-01/providers/Microsoft.Web/connections/excelonlinebusiness",
+            "type": "String"
+        }
+    },
     "variables": {},
     "resources": [
         {
             "type": "Microsoft.Logic/workflows",
             "apiVersion": "2017-07-01",
-            "name": "la-hello-world",
+            "name": "[parameters('workflows_la_excel_devops_parameter_name')]",
             "location": "southindia",
             "properties": {
                 "state": "Enabled",
                 "definition": {
                     "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
                     "contentVersion": "1.0.0.0",
-                    "parameters": {},
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
                     "triggers": {
                         "manual": {
                             "type": "Request",
                             "kind": "Http",
                             "inputs": {
-                                "schema": {}
+                                "schema": {
+                                    "properties": {
+                                        "Capital": {
+                                            "type": "string"
+                                        },
+                                        "Continent": {
+                                            "type": "string"
+                                        },
+                                        "Country": {
+                                            "type": "string"
+                                        },
+                                        "Currency": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
                             }
                         }
                     },
                     "actions": {
-                        "Response": {
+                        "Add_a_row_into_a_table": {
                             "runAfter": {},
-                            "type": "Response",
-                            "kind": "Http",
+                            "metadata": {
+                                "01UWNUMLPN2BUEJI47HJDKRSFZERNQTAIH": "/General/LogicApp-test-sheet.xlsx"
+                            },
+                            "type": "ApiConnection",
                             "inputs": {
-                                "body": "Hello World, from new logic app, new deployment - 7th Aug 22",
-                                "statusCode": 200
+                                "body": {
+                                    "Capital": "@triggerBody()?['Capital']",
+                                    "Continent": "@triggerBody()?['Continent']",
+                                    "Country ": "@triggerBody()?['Country']",
+                                    "Currency": "@triggerBody()?['Currency']"
+                                },
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['excelonlinebusiness']['connectionId']"
+                                    }
+                                },
+                                "method": "post",
+                                "path": "/codeless/v1.2/drives/@{encodeURIComponent('b!64aFrgIsFUqdWhxNHL7xRdj5V6SdRtlMnlkPZQiBSLWwDgs5FBgIQ47iZHSlqyAw')}/items/@{encodeURIComponent(encodeURIComponent('01UWNUMLPN2BUEJI47HJDKRSFZERNQTAIH'))}/workbook/tables/@{encodeURIComponent('{B870FFC5-29A6-40D6-A6AE-D98E7AA56A5B}')}/rows",
+                                "queries": {
+                                    "source": "groups/d56444fb-6cd7-4489-996f-439ded73b24f"
+                                }
                             }
                         }
                     },
                     "outputs": {}
                 },
-                "parameters": {}
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "excelonlinebusiness": {
+                                "connectionId": "[parameters('connections_excelonlinebusiness_externalid')]",
+                                "connectionName": "excelonlinebusiness",
+                                "id": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/providers/Microsoft.Web/locations/southindia/managedApis/excelonlinebusiness"
+                            }
+                        }
+                    }
+                }
             }
         }
     ]
