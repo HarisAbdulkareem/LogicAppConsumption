@@ -19,6 +19,6 @@ steps:
     resourceGroupName: 'rg-devops-deployment'
     location: 'South India'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/HarisAbdulkareem/LogicAppConsumption/main/template_con.json'
+    csmFileLink: 'https://raw.githubusercontent.com/HarisAbdulkareem/LogicAppConsumption/main/template.json'
     csmParametersFileLink: 'https://raw.githubusercontent.com/HarisAbdulkareem/LogicAppConsumption/main/parameters.json'
     deploymentMode: 'Incremental'
