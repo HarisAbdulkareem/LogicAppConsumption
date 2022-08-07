@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "workflows_la_excel_devops_parameter_name": {
-            "defaultValue": "la-excel-devops-parameter",
+            "defaultValue": "la-excel-devops-parameter-test",
             "type": "String"
         },
         "connections_excelonlinebusiness_externalid": {
