@@ -7,7 +7,7 @@
             "type": "String"
         },
         "connections_excelonlinebusiness_externalid": {
-            "defaultValue": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-devops-01/providers/Microsoft.Web/connections/excelonlinebusiness",
+            "defaultValue": "/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-devops-deployment/providers/Microsoft.Web/connections/excelonlinebusiness",
             "type": "String"
         }
     },
