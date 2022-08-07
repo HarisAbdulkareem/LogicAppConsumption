@@ -1,0 +1,47 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_excelonlinebusiness_name": {
+            "defaultValue": "excelonlinebusiness",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('connections_excelonlinebusiness_name')]",
+            "location": "southindia",
+            "kind": "V1",
+            "properties": {
+                "displayName": "haabdulk@microsoft.com",
+                "statuses": [
+                    {
+                        "status": "Connected"
+                    }
+                ],
+                "customParameterValues": {},
+                "nonSecretParameterValues": {},
+                "createdTime": "2022-08-07T09:17:40.1865342Z",
+                "changedTime": "2022-08-07T11:12:59.1192359Z",
+                "api": {
+                    "name": "[parameters('connections_excelonlinebusiness_name')]",
+                    "displayName": "Excel Online (Business)",
+                    "description": "Excel Online (Business) connector lets you work with Excel files in document libraries supported by Microsoft Graph (OneDrive for Business, SharePoint Sites, and Office 365 Groups).",
+                    "iconUri": "[concat('https://connectoricons-prod.azureedge.net/releases/v1.0.1590/1.0.1590.2954/', parameters('connections_excelonlinebusiness_name'), '/icon.png')]",
+                    "brandColor": "#107C41",
+                    "id": "[concat('/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/providers/Microsoft.Web/locations/southindia/managedApis/', parameters('connections_excelonlinebusiness_name'))]",
+                    "type": "Microsoft.Web/locations/managedApis"
+                },
+                "testLinks": [
+                    {
+                        "requestUri": "[concat('https://management.azure.com:443/subscriptions/e93d366d-b904-4e0b-bb5e-134281ec1919/resourceGroups/rg-devops-01/providers/Microsoft.Web/connections/', parameters('connections_excelonlinebusiness_name'), '/extensions/proxy/testconnection?api-version=2016-06-01')]",
+                        "method": "get"
+                    }
+                ]
+            }
+        }
+    ]
+}
